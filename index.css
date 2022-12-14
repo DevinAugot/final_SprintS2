@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.cdnfonts.com/css/love-rabbit-personal-use");
 * {
+
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -11,11 +12,25 @@
 body {
   background: #ececec8a;
   font-family: "Roboto", sans-serif;
+  /* This changes background for all pages */
+  background: url(https://images.unsplash.com/photo-1663349487048-34ae9121f440?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80);
 }
+.btn-login:hover{
+  cursor: pointer;
+}
+.btn-login {
+  justify-content: center;
+  border: .5px;
+  width: 250px;
+  height: 45px;
+  border-radius: 5px;
+  background-color: rgb(60, 161, 255);
+  color: white;
+  width: 162px;
 
-.btn-login{
+  /* old css below */
   /* Auto layout */
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -23,12 +38,12 @@ body {
   gap: 10px;
 
   background: rgba(15, 142, 205, 0.66);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+ 
 
   /* Log in */
 
-  height: 2.5rem;
+  /* height: 3rem;
   width: 10rem;
   font-family: "Inter";
   font-style: normal;
@@ -37,18 +52,19 @@ body {
   line-height: 17px;
   text-align: center;
 
-  color: rgba(255, 255, 255, 0.79);
+  color: rgba(255, 255, 255, 0.79); */
 
   /* Inside auto layout */
 
-  box-shadow: 2px;
+  /* box-shadow: 2px;
   height: 2.5rem;
   width: 1rem;
   border-radius: 6px;
   background-color: rgba(91, 150, 252, 0.808);
-  color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255); */
 }
 form {
+ 
   padding: 4rem;
   margin-left: auto;
   margin-right: auto;
@@ -78,6 +94,7 @@ form {
 }
 .Log-In {
   padding-left: 2.5rem;
+  
 }
 .h1 {
   padding-left: 5rem;
@@ -110,16 +127,15 @@ form {
   padding: 25px;
 }
 
-
-
 /* first input */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-.input1 {
-  border: none;
+.input-one {
+ text-align: center;
+  border: .5px solid;
   -webkit-appearance: none;
   -ms-appearance: none;
   -moz-appearance: none;
@@ -146,19 +162,18 @@ input:focus::placeholder {
   top: calc(50% + 10px);
   transform: translateY(-80%);
   color: #aaa;
-  transition: top 0.3s ease,
-  font-size 0.3s ease,
-  color 0.3s ease ;
+  transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
 }
-.custom-field input:valid + .placeholder, 
+.custom-field input:valid + .placeholder,
 .custom-field input:focus + .placeholder {
   top: 10px;
   font-size: 10px;
   color: #222;
 }
 
-.input {
-  border: none;
+.input-two {
+  text-align: center;
+  border: .5px solid;
   -webkit-appearance: none;
   -ms-appearance: none;
   -moz-appearance: none;
@@ -172,7 +187,6 @@ input:focus::placeholder {
 }
 
 /* second input  */
-
 
 .input.two {
   border: none;
@@ -202,11 +216,9 @@ input:focus::placeholder.one {
   top: calc(50% + 10px);
   transform: translateY(-80%);
   color: #aaa;
-  transition: top 0.3s ease,
-  font-size 0.3s ease,
-  color 0.3s ease ;
+  transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
 }
-.custom-field input:valid + .placeholder, 
+.custom-field input:valid + .placeholder,
 .custom-field input:focus + .placeholder {
   top: 10px;
   font-size: 10px;
@@ -226,3 +238,100 @@ input:focus::placeholder.one {
   outline: none;
   font: 14px;
 }
+
+
+
+/* Sign up page */
+#main{
+  align-items: center;
+  width: auto;
+  height: auto;
+  display: grid;
+  background: white;
+  max-width: 450px;
+  margin: 30px auto;
+  min-height: 300px;
+  /* this border controls the outline of box containers */
+  border: 2px solid gray;
+  border-radius: 5px;
+  overflow: auto;
+  padding: 25px;
+
+}
+#email{
+
+  justify-content: center;
+  border: .5px solid;
+  width: 250px;
+  height: 45px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgba(216, 216, 216, 0.548);
+}
+#name {
+  border: .5px solid;
+  width: 250px;
+  height: 45px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgba(216, 216, 216, 0.548);
+}
+#user{
+  border: .5px solid;
+  width: 250px;
+  height: 45px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgba(216, 216, 216, 0.548);
+}
+#pass {
+  border: .5px solid;
+  width: 250px;
+  height: 45px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgba(216, 216, 216, 0.548);
+}
+#sign{
+  justify-content: center;
+  border: .5px;
+  width: 250px;
+  height: 45px;
+  border-radius: 5px;
+  background-color: rgb(60, 161, 255);
+  color: white;
+  width: 260px;
+}
+#form{
+  border: 2px solid black;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#intro {
+  text-align: center;
+  border: 2px solid rgb(60, 161, 255);
+  border-radius: 5px;
+  max-width: 300px;
+  background-color: rgba(216, 216, 216, 0.548);
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#terms{
+  text-align: center;
+  max-width: 400px;
+}
+#login{
+  border: 2px solid black;
+  border-radius: 10px;
+  width: auto;
+}
+
+#SignUp-header{
+  justify-content: center;
+}
+
