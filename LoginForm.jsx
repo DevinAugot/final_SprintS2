@@ -1,20 +1,72 @@
-import { useForm } from "react-hook-form";
-
-const userName = "CodeExpert22";
-const Password = "123";
-
-export const EmailForm = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (e) => {
-    alert("data submitted");
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Header from "./Header";
+const Login = () => {
+  const [user, setUser] = useState("");
+  const [pass, setPass] = useState("");
+  const [data, setData] = useState([]);
+  const navigate = useNavigate();
+  const submit = (e) => {
+    console.log(`username: ${user}, Password: ${pass}`);
+    e.preventDefault();
+  };
+  useEffect(() => {
+    //now fetch only users from your running server...
+    const getData = async () => {
+      const dataFromServer = await fetchData();
+      setData(dataFromServer);
+    };
+    getData();
+  }, []);
+  const fetchData = async () => {
+    const res = await fetch("http://localhost:5000/users");
+    const data = await res.json();
+    console.log(data); // this grabs user info in db.json
+  };
+// do i need to use db.json naming conventions in check user function? 
+  const CheckUser = (e) => {
+    data.forEach((user) => {
+      if (user.username === user && user.password === pass) {
+        navigate("/FeedPage");
+      }
+      e.preventDefault();
+    });
   };
   
+  // attemping to fetch the user info
+  // const [logins, setLogins] = useState([]);
+  // const [showAddLogins, setShowAddLogins] = useState(false);
 
-  //   -----------------------------------------------------
+  // useEffect(() => {
+  //   const getLogins = async () => {
+  //     const loginFromServer = await fetchLogin();
+  //     setLogins(loginFromServer);
+  //   };
+
+  //   getLogins();
+  // }, []);
+
+  // const fetchLogin = async () => {
+  //   const res = await fetch("http://localhost:5000/users");
+  //   const data = await res.json();
+  //   return data;
+  // };
+
+  // const addUser = async (users) => {
+  //   const res = await fetch("POST","http://localhost:5000/users", {
+  //     method: {
+  //       "Content-type": "application/json",
+  //     },
+  //     body: JSON.stringify(users),
+
+  //   });
+  //   const data = await res.json();
+  //   console.log(user.username);
+  //   setLogins(...logins, data);
+  // };
+  // addUser();
+  // };
+  //   attempt to grab logins ends here!-----------------------------------------------------
   //   this gets the login credentials and consoles them
   //     const params = useParams();
 
@@ -32,258 +84,55 @@ export const EmailForm = () => {
 
   // this also grabs the db.json information
 
-  //   -----------------------------------------------------
-  // =========Validation attempt===========//
-
-  // const validation = ({ error, ...rest }) => {
-  //     let checkValidation = false;
-
-  //     Object.values(error).forEach(val => {
-  //         if (val.length > 0) {
-  //             checkValidation = false
-  //         } else {
-  //             checkValidation = true
-  //         }
-
-  //     });
-
-  //     Object.values(rest).forEach(val => {
-  //         if (val === null) {
-  //             checkValidation = false
-  //         } else {
-  //             checkValidation = true
-  //         }
-  //     });
-
-  //     return checkValidation;
-  // };
-
-  // =========Validation attempt===========//
+  //   ---------------------------------------------------
 
   return (
     <>
-      <div className="container w-25 p-3 background mt-5">
-        {/* <h3 className='text-center'>Login Form</h3> */}
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="row my-3">
-            <div className="col-9">
-              <label className="custom-field">
-                <input
-                  className="input1"
-                  type="text"
-                  {...register("user name", {
-                    required: true,password:"!22Coding23",
-                    pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}$/,
-                  })}
-                  // placeholder="Enter User Name.."
-                  required
-                />
-                <span className="placeholder">Enter User name...</span>
-              </label>
-              {errors.email && (
-                <p className="error">Please enter valid Email !</p>
-              )}
+      <div className="container">
+        <Header></Header>
+        <div className="container w-25 p-3 background mt-5">
+          <form className="form-control" onSubmit={CheckUser}>
+            <div className="row my-3">
+              <div className="col-9">
+                <div id="Username1">
+                  <input
+                    className="input-one"
+                    type="text"
+                    placeholder="Username"
+                    id="username"
+                    onChange={(e) => {
+                      setUser(e.target.value);
+                    }}
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="col-3"></div>
-            <div className="col-9">
-              <label className="custom-field one">
+            <div className="row">
+              <div className="col-9">
                 <input
-                  className="input two"
-                  type="text"
-                  {...register("password", {
-                    required: true,
-                    pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}$/,
-                  })}
-                  required
+                  className="input-two"
+                  type="password"
+                  placeholder="Password"
+                  id="password"
+                  onChange={(e) => {
+                    setPass(e.target.value);
+                  }}
                 />
-                {errors.password && (
-                  <p className="error">Please enter valid Password !</p>
-                )}
-                <span className="placeholder one">Enter Password...</span>
-              </label>
+              </div>
             </div>
-          </div>
-          <div className="mt-3">
-            <button type="submit" className="btn-login">
-              Login
+
+            {/* <Loginbutton /> */}
+            <button type="submit" onClick={submit} className="btn-login">
+              Log In
             </button>
-          </div>
-        </form>
+            {/* <Signupbutton /> */}
+            <p id="DHAA">Don't have an account?</p>
+            <a href="http://localhost:3000/SignUp">Sign Up</a>
+          </form>
+        </div>
       </div>
     </>
   );
 };
 
-export default EmailForm;
-
-// option 2 possibly !!!!!!!!
-
-// import React from 'react';
-//   const userName = "CodeExpert22";
-//     const Password = "123456abc"
-
-// class EmailForm extends React.Component {
-//     constructor() {
-//     super();
-//     this.state = {
-//       input: {},
-//       errors: {}
-//     };
-
-//     this.handleChange = this.handleChange.bind(this);
-//     this.handleSubmit = this.handleSubmit.bind(this);
-//   }
-
-//   handleChange(event) {
-//     let input = this.state.input;
-//     input[event.target.name] = event.target.value;
-
-//     this.setState({
-//       input
-//     });
-//   }
-
-//   handleSubmit(event) {
-//     event.preventDefault();
-
-//     if(this.validate()){
-//         console.log(this.state);
-
-//         let input = {};
-//         input["username"] = "";
-
-//         input["password"] = "";
-//         input["confirm_password"] = "";
-//         this.setState({input:input});
-
-//          // this gets the login credentials and consoles them
-//     // const params = useParams();
-
-//    // need to get this validation working mabye reference db.json
-
-//             if(input["username"] === userName && input["password"] === Password){
-//                 alert("Succesfully logged in! Have Fun🤓")
-
-//           }else if(input["username"] != userName && input["password"] != Password){
-//             alert("Wrong infomartion sorry!")
-
-//           }
-//         // alert('Succesfully logged in');
-//     }
-//   }
-
-//   validate(){
-//       let input = this.state.input;
-//       let errors = {};
-//       let isValid = true;
-
-//       if (!input["username"]) {
-//         isValid = false;
-//         errors["username"] = "Please enter your username.";
-//       }
-
-//       if (typeof input["username"] !== "undefined") {
-//         const re = /^\S*$/;
-//         if(input["username"].length < 6 || !re.test(input["username"])){
-//             isValid = false;
-//             errors["username"] = "Please enter valid username.";
-//         }
-
-//       }
-//       // here is validating the dummy data to make sure user gets in with proper credentials also need to do for email!
-
-//       if (!input["password"]) {
-//         isValid = false;
-//         errors["password"] = "Please enter your password.";
-//       }
-
-//       if (!input["confirm_password"]) {
-//         isValid = false;
-//         errors["confirm_password"] = "Please enter your confirm password.";
-//       }
-
-//       if (typeof input["password"] !== "undefined") {
-//         if(input["password"].length < 6){
-//             isValid = false;
-//             errors["password"] = "Please add at least 6 characters.";
-//         }
-//       }
-
-//       if (typeof input["password"] !== "undefined" && typeof input["confirm_password"] !== "undefined") {
-
-//         if (input["password"] != input["confirm_password"]) {
-//           isValid = false;
-//           errors["password"] = "Passwords don't match.";
-//         }
-
-//       }
-
-//       this.setState({
-//         errors: errors
-//       });
-
-//       return isValid;
-//   }
-
-//   render() {
-
-//     return (
-
-//       <div className="Log-In">
-
-//         <form onSubmit={this.handleSubmit}>
-
-//           <div class="form-group">
-//             <label for="username">Username:</label>
-//             <input
-//               type="text"
-//               name="username"
-//               value={this.state.input.username}
-//               onChange={this.handleChange}
-//               class="form-control"
-//               placeholder="Enter username"
-//               id="username" />
-
-//               <div className="text-danger">{this.state.errors.username}</div>
-//           </div>
-
-//           <div class="form-group">
-//             <label for="password">Password:</label><br />
-//             <input
-//               type="password"
-//               name="password"
-//               value={this.state.input.password}
-//               onChange={this.handleChange}
-//               class="form-control"
-//               placeholder="Enter password"
-//               id="password" />
-
-//               <div className="text-danger">{this.state.errors.password}</div>
-//           </div>
-
-//           <div class="form-group">
-//             <label for="password">Confirm Password:</label>
-//             <input
-//               type="password"
-//               name="confirm_password"
-//               value={this.state.input.confirm_password}
-//               onChange={this.handleChange}
-//               class="form-control"
-//               placeholder="Enter confirm password"
-//               id="confirm_password" />
-
-//               <div className="text-danger">{this.state.errors.confirm_password}</div>
-//           </div>
-//              {/* need to make this submit button go to feed page  */}
-//           <input type="submit" value="Log In" class="btn btn-success" />
-//         </form>
-//       </div>
-//     );
-
-//   }
-
-// }
-
-// export default EmailForm;
+export default Login;
