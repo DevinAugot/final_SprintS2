@@ -64,9 +64,11 @@ export const Register = () => {
                 <br />
                 <br />
               </div>
+              <div className="signup-div">
               <button type="submit" id="sign">
                 Sign Up
               </button>
+              </div>
 
               <br />
               <p id="terms">
