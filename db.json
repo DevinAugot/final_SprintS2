@@ -1,9 +1,8 @@
 {
-    "logins":[
-    {
-        "id": "CodeExpert22",
-        "title": "abc123",
-        "body": "demo@gmail.com"
-    }
-]
+  "users": [
+
+  ]
 }
+
+
+// This empty array will be filled from the login page currently 
