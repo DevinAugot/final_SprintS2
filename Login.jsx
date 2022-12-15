@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "./Header";
 import Nav from "./Nav"
+import Footer from "./Footer"
 const Login = () => {
   const [users, setUsers] = useState([]);
 
@@ -56,7 +57,9 @@ const Login = () => {
       <form
         className="form-control"
         onSubmit={() => addUser({ userName, password })}
-      >
+      >  <p id="intro">
+     Hurry up and Log In Weve been waiting for you to come back!
+    </p>
         <div className="row my-3">
           <div className="col-9">
             <div id="Username1">
@@ -94,6 +97,7 @@ const Login = () => {
       </form>
     </div>
     </div>
+    <Footer></Footer>
     </div>
   );
 };
