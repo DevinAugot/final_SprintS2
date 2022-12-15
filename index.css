@@ -15,10 +15,13 @@ body {
   /* This changes background for all pages */
   background: url(https://images.unsplash.com/photo-1663349487048-34ae9121f440?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80);
 }
-.btn-login:hover{
-  cursor: pointer;
+
+#sign-up-link{
+  color: blue;
+  border: 1px solid;
+  border-radius: 5px;
 }
-.btn-login {
+input[type="submit"] {
   justify-content: center;
   border: .5px;
   width: 250px;
@@ -27,41 +30,8 @@ body {
   background-color: rgb(60, 161, 255);
   color: white;
   width: 162px;
-
-  /* old css below */
-  /* Auto layout */
-  /* display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 78.5px;
-  gap: 10px;
-
-  background: rgba(15, 142, 205, 0.66);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
- 
-
-  /* Log in */
-
-  /* height: 3rem;
-  width: 10rem;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 17px;
-  text-align: center;
-
-  color: rgba(255, 255, 255, 0.79); */
-
-  /* Inside auto layout */
-
-  /* box-shadow: 2px;
-  height: 2.5rem;
-  width: 1rem;
-  border-radius: 6px;
-  background-color: rgba(91, 150, 252, 0.808);
-  color: rgb(255, 255, 255); */
+  cursor: pointer;
+  box-shadow: ();
 }
 form {
  
@@ -156,20 +126,7 @@ input:focus::placeholder {
   padding-top: 20px;
   margin-bottom: 2px;
 }
-.custom-field .placeholder {
-  position: absolute;
-  left: 14px;
-  top: calc(50% + 10px);
-  transform: translateY(-80%);
-  color: #aaa;
-  transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
-}
-.custom-field input:valid + .placeholder,
-.custom-field input:focus + .placeholder {
-  top: 10px;
-  font-size: 10px;
-  color: #222;
-}
+
 
 .input-two {
   text-align: center;
@@ -186,58 +143,10 @@ input:focus::placeholder {
   font: 14px;
 }
 
-/* second input  */
 
-.input.two {
-  border: none;
-  -webkit-appearance: none;
-  -ms-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: #f2f2f2;
-  border-radius: 3px;
-  width: 160px;
-  height: 35px;
-  outline: none;
-  font: 14px;
-}
-input:focus::placeholder.one {
-  color: transparent;
-}
-.custom-field {
-  position: relative;
-  font-size: 14px;
-  padding-top: 20px;
-  margin-bottom: 2px;
-}
-.custom-field .placeholder {
-  position: absolute;
-  left: 14px;
-  top: calc(50% + 10px);
-  transform: translateY(-80%);
-  color: #aaa;
-  transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
-}
-.custom-field input:valid + .placeholder,
-.custom-field input:focus + .placeholder {
-  top: 10px;
-  font-size: 10px;
-  color: #222;
-}
 
-.input {
-  border: none;
-  -webkit-appearance: none;
-  -ms-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: #f2f2f2;
-  border-radius: 3px;
-  width: 160px;
-  height: 35px;
-  outline: none;
-  font: 14px;
-}
+
+
 
 
 
