@@ -1,33 +1,31 @@
 /* Author: Devin Augot */
 /* Date: December, ,2022 */
+
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch,Routes } from "react-router-dom";
-import FeedPage from "./components/FeedPage";
-import LoginPage from "./components/LoginPage";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// import FeedPage from "./components/FeedPage";
+import Home from "./components/Home"
+
 import SignUp from "./components/SignUp";
 import Nav from "./components/Nav";
+import Login from "./components/Login";
 
 function App() {
- 
   return (
-    
     <div className="App">
-    <Router>
-      <Nav></Nav>
-    
-    
-    <Routes>
-      
-      <Route exact path = "/SignUp" element={<SignUp/>} />
-        <Route exact path="/LoginPage" element={<LoginPage/>} />
-       
-       
+      <Router>
         
+
+        <Routes>
+         
+          <Route exact path = "/" element={<Home/>}/>
+        
+          <Route exact path="/SignUp" element={<SignUp />} />
+          <Route exact path="/Login" element={<Login />} />
         </Routes>
-    </Router>
+      </Router>
     </div>
   );
 }
 
 export default App;
-
