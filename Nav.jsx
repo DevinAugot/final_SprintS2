@@ -9,6 +9,7 @@ const Nav = () => {
   return (
     <nav>
       <h3>
+        <br />
         <Header />
       </h3>
       <ul className="nav-links">
