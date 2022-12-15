@@ -1,6 +1,7 @@
 import Header from "./Header";
 import React, { useState } from "react";
 import Nav from "./Nav";
+import Footer from "./Footer"
 export const Register = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -83,10 +84,12 @@ export const Register = () => {
 
         <div id="login">
           <p>
-            Have an account? <a href="http://localhost:3000/Login">Log in</a>
+            Have an account? <a  href="http://localhost:3000/Login">Log in</a>
           </p>
         </div>
+       
       </div>
+      <Footer></Footer>
     </>
   );
 };
