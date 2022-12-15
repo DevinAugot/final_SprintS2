@@ -141,7 +141,7 @@ custom-field {
 }
 
 /* Sign up page */
-.container-signup{
+.container-signup {
   align-items: center;
   width: auto;
   height: auto;
@@ -156,7 +156,7 @@ custom-field {
   overflow: auto;
   padding: 25px;
 }
-.signup-header{
+.signup-header {
   justify-content: center;
   padding-left: 50px;
 }
@@ -208,15 +208,18 @@ custom-field {
   text-align: center;
   background-color: rgba(216, 216, 216, 0.548);
 }
+.signup-div{
+  padding-left: .5px;
+}
 #sign {
+ 
   justify-content: center;
   border: 0.5px;
-  width: 250px;
   height: 45px;
   border-radius: 5px;
   background-color: rgb(60, 161, 255);
   color: white;
-  width: 260px;
+  width: 250px;
 }
 #form {
   border: 2px solid black;
@@ -246,4 +249,3 @@ h1 {
   border-radius: 10px;
   width: auto;
 }
-
