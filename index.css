@@ -4,7 +4,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.cdnfonts.com/css/love-rabbit-personal-use");
 * {
-
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -16,14 +15,15 @@ body {
   background: url(https://images.unsplash.com/photo-1663349487048-34ae9121f440?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80);
 }
 
-#sign-up-link{
+#sign-up-link {
   color: blue;
   border: 1px solid;
   border-radius: 5px;
+  background-color: #f2f2f2;
 }
 input[type="submit"] {
   justify-content: center;
-  border: .5px;
+  border: 0.5px;
   width: 250px;
   height: 45px;
   border-radius: 5px;
@@ -34,7 +34,6 @@ input[type="submit"] {
   box-shadow: ();
 }
 form {
- 
   padding: 4rem;
   margin-left: auto;
   margin-right: auto;
@@ -64,7 +63,6 @@ form {
 }
 .Log-In {
   padding-left: 2.5rem;
-  
 }
 .h1 {
   padding-left: 5rem;
@@ -104,8 +102,8 @@ form {
   box-sizing: border-box;
 }
 .input-one {
- text-align: center;
-  border: .5px solid;
+  text-align: center;
+  border: 0.5px solid;
   -webkit-appearance: none;
   -ms-appearance: none;
   -moz-appearance: none;
@@ -120,17 +118,16 @@ form {
 input:focus::placeholder {
   color: transparent;
 }
-.custom-field {
+custom-field {
   position: relative;
   font-size: 14px;
   padding-top: 20px;
   margin-bottom: 2px;
 }
 
-
 .input-two {
   text-align: center;
-  border: .5px solid;
+  border: 0.5px solid;
   -webkit-appearance: none;
   -ms-appearance: none;
   -moz-appearance: none;
@@ -143,15 +140,8 @@ input:focus::placeholder {
   font: 14px;
 }
 
-
-
-
-
-
-
-
 /* Sign up page */
-#main{
+.container-signup{
   align-items: center;
   width: auto;
   height: auto;
@@ -165,12 +155,29 @@ input:focus::placeholder {
   border-radius: 5px;
   overflow: auto;
   padding: 25px;
-
 }
-#email{
-
+.signup-header{
   justify-content: center;
-  border: .5px solid;
+  padding-left: 50px;
+}
+#main {
+  align-items: center;
+  width: auto;
+  height: auto;
+  display: grid;
+  background: white;
+  max-width: 500px;
+  margin: 30px auto;
+  min-height: 300px;
+  /* this border controls the outline of box containers */
+  border: 2px solid gray;
+  border-radius: 5px;
+  overflow: auto;
+  padding: 25px;
+}
+#email {
+  justify-content: center;
+  border: 0.5px solid;
   width: 250px;
   height: 45px;
   border-radius: 5px;
@@ -178,15 +185,15 @@ input:focus::placeholder {
   background-color: rgba(216, 216, 216, 0.548);
 }
 #name {
-  border: .5px solid;
+  border: 0.5px solid;
   width: 250px;
   height: 45px;
   border-radius: 5px;
   text-align: center;
   background-color: rgba(216, 216, 216, 0.548);
 }
-#user{
-  border: .5px solid;
+#user {
+  border: 0.5px solid;
   width: 250px;
   height: 45px;
   border-radius: 5px;
@@ -194,16 +201,16 @@ input:focus::placeholder {
   background-color: rgba(216, 216, 216, 0.548);
 }
 #pass {
-  border: .5px solid;
+  border: 0.5px solid;
   width: 250px;
   height: 45px;
   border-radius: 5px;
   text-align: center;
   background-color: rgba(216, 216, 216, 0.548);
 }
-#sign{
+#sign {
   justify-content: center;
-  border: .5px;
+  border: 0.5px;
   width: 250px;
   height: 45px;
   border-radius: 5px;
@@ -211,14 +218,14 @@ input:focus::placeholder {
   color: white;
   width: 260px;
 }
-#form{
+#form {
   border: 2px solid black;
   padding: 20px;
   text-align: center;
   border-radius: 10px;
 }
 h1 {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 #intro {
   text-align: center;
@@ -230,17 +237,16 @@ h1 {
   margin-left: auto;
   margin-right: auto;
 }
-#terms{
+#terms {
   text-align: center;
   max-width: 400px;
 }
-#login{
+#login {
   border: 2px solid black;
   border-radius: 10px;
   width: auto;
 }
 
-#SignUp-header{
+#SignUp-header {
   justify-content: center;
 }
-
