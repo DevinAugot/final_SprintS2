@@ -1,8 +1,12 @@
 {
   "users": [
-
+    {
+      "userName": "devin",
+      "password": "123red",
+      "id": 1
+    }
   ]
 }
 
 
-// This empty array will be filled from the login page currently 
+// This array will be filled from the login page currently and will from userName,password,id, in the login page
