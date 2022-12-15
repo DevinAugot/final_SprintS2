@@ -1,5 +1,6 @@
 import Header from './Header'
 import React, { useState } from "react";
+import Nav from "./Nav"
 export const Register = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -12,7 +13,10 @@ export const Register = () => {
     e.preventDefault();
   };
   return (
+    <>
+    <Nav></Nav>
     <div id="main">
+   
        <Header></Header>
       <div>
         <form onSubmit={submit} id="form-control">
@@ -78,10 +82,11 @@ export const Register = () => {
     
      <div id="login">
      <p>
-       Have an account? <a href="http://localhost:3000/LoginPage">Log in</a>
+       Have an account? <a href="http://localhost:3000/Login">Log in</a>
      </p>
    </div>
    </div>
+   </>
   );
 };
  export default Register;
