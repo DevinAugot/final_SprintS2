@@ -12,7 +12,10 @@ const Nav = () => {
         <Header />
       </h3>
       <ul className="nav-links">
-        <Link style={navStyle} to={"/LoginPage"}>
+      <Link style={navStyle} to={"/"}>
+          <li>Home</li>
+        </Link>
+        <Link style={navStyle} to={"/Login"}>
           <li>Login</li>
         </Link>
         <Link style={navStyle} to="/SignUp">
