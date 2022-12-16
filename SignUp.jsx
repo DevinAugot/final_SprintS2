@@ -1,18 +1,59 @@
 import Header from "./Header";
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import Nav from "./Nav";
-import Footer from "./Footer"
+import Footer from "./Footer";
+
 export const Register = () => {
+  const [users, setUsers] = useState([]);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [user, setUser] = useState("");
-  const [pass, setPass] = useState("");
-  const submit = (e) => {
-    console.log(
-      `Email: ${email}, Name: ${name}, username: ${user}, Password: ${pass}`
-    );
-    e.preventDefault();
+  const [userName, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const dataFromServer = await fetchData();
+      // console.log(dataFromServer);
+      setUsers(dataFromServer);
+    };
+
+    fetchUsers();
+  }, []);
+
+  const fetchData = async () => {
+    const res = await fetch("http://localhost:5000/users");
+
+    const data = await res.json();
+
+    console.log(data, res);
+
+    return data;
   };
+
+  const addUser = async (user) => {
+    const res = await fetch("http://localhost:5000/users", {
+      method: "POST",
+
+      headers: {
+        "Content-type": "application/json",
+      },
+
+      body: JSON.stringify(user),
+    });
+    console.log(user);
+    const newUsers = await res.json();
+
+    // console.log(newUsers);
+
+    setUsers([...users, newUsers]);
+  };
+
+  // const submit = (e) => {
+  //   console.log(
+  //     `Email: ${email}, Name: ${name}, username: ${user}, Password: ${pass}`
+  //   );
+  //   e.preventDefault();
+  // };
   return (
     <>
       <Nav></Nav>
@@ -22,7 +63,10 @@ export const Register = () => {
         </div>
         <div className="container-signup">
           <div>
-            <form onSubmit={submit} id="form-control">
+            <form
+              onSubmit={() => addUser({ email, name, userName, password })}
+              id="form-control"
+            >
               <p id="intro">
                 Sign up to see code/projects/photos from friends & other people
                 around the world! Even get help debugging your code!
@@ -47,8 +91,7 @@ export const Register = () => {
                 <br />
                 <br />
                 <input
-                  value={user}
-                  onChange={(e) => setUser(e.target.value)}
+                  onChange={(e) => setUsername(e.target.value)}
                   type="text"
                   placeholder="User Name"
                   id="user"
@@ -56,8 +99,7 @@ export const Register = () => {
                 <br />
                 <br />
                 <input
-                  value={pass}
-                  onChange={(e) => setPass(e.target.value)}
+                  onChange={(e) => setPassword(e.target.value)}
                   type="password"
                   placeholder="Password"
                   id="pass"
@@ -66,9 +108,9 @@ export const Register = () => {
                 <br />
               </div>
               <div className="signup-div">
-              <button type="submit" id="sign">
-                Sign Up
-              </button>
+                <button type="submit" id="sign">
+                  Sign Up
+                </button>
               </div>
 
               <br />
@@ -84,10 +126,9 @@ export const Register = () => {
 
         <div id="login">
           <p>
-            Have an account? <a  href="http://localhost:3000/Login">Log in</a>
+            Have an account? <a href="http://localhost:3000/Login">Log in</a>
           </p>
         </div>
-       
       </div>
       <Footer></Footer>
     </>
