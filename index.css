@@ -14,7 +14,23 @@ body {
   /* This changes background for all pages */
   background: url(https://images.unsplash.com/photo-1537420327992-d6e192287183?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1288&q=80);
 }
-
+/* Log In Page */
+#btn-login:hover{
+ 
+    border: 2px solid black;
+    color: rgb(0, 1, 6);
+  
+}
+#btn-login{
+  cursor: pointer;
+  justify-content: center;
+  border: 0.5px;
+  height: 45px;
+  border-radius: 5px;
+  background-color: rgb(60, 161, 255);
+  color: white;
+  width: 170px;
+}
 #sign-up-link {
   color: blue;
   border: 1px solid;
@@ -213,6 +229,8 @@ custom-field {
   padding-left: 0.5px;
 }
 #sign {
+  
+  cursor: pointer;
   justify-content: center;
   border: 0.5px;
   height: 45px;
@@ -220,6 +238,10 @@ custom-field {
   background-color: rgb(60, 161, 255);
   color: white;
   width: 250px;
+}
+#sign:hover{
+  border: 2px solid black;
+  color: rgb(0, 1, 6);
 }
 #form {
   border: 2px solid black;
@@ -244,7 +266,15 @@ h1 {
   text-align: center;
   max-width: 400px;
 }
+#login:hover{
+  
+    
+    color: rgb(0, 1, 6);
+
+}
 #login {
+  color: blue;
+  cursor: pointer;
   border: 2px solid black;
   border-radius: 10px;
   width: auto;
