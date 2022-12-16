@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Nav from "./Nav"
 import Footer from "./Footer"
@@ -8,6 +9,21 @@ const Login = () => {
   const [userName, setUsername] = useState("");
 
   const [password, setPassword] = useState("");
+
+  // will need to use this below to nav to feed page once user info is entered
+
+  // const navigate = useNavigate();
+
+  // do i need to use db.json naming conventions in check user function?
+ 
+  // const CheckUser = (e) => {
+  //   data.forEach((user) => {
+  //     if (user.username === userName && user.password === passWord) {
+  //       navigate("/FeedPage");
+  //     }
+  //     e.preventDefault();
+  //   });
+  // };
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -89,8 +105,9 @@ const Login = () => {
             />
           </div>
         </div>
-
-        <input id="btn-login" type="submit" />
+        <button type="submit" id="btn-login">
+                  Log In
+                </button>
 <br />
         <p id="DHAA">Don't have an account?</p>
         <a id="sign-up-link" href="http://localhost:3000/SignUp">Sign Up</a>
