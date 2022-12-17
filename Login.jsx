@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Header from "./Header";
 import Nav from "./Nav"
 import Footer from "./Footer"
+import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [users, setUsers] = useState([]);
 
@@ -18,11 +19,13 @@ const Login = () => {
  
   // const CheckUser = (e) => {
   //   data.forEach((user) => {
-  //     if (user.username === userName && user.password === passWord) {
+  //     if (user.userName === userName && user.password === passWord) {
   //       navigate("/FeedPage");
   //     }
+        
   //     e.preventDefault();
   //   });
+  // useNavigate();
   // };
 
   useEffect(() => {
