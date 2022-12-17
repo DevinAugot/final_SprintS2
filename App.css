@@ -1,6 +1,5 @@
 .App {
   text-align: center;
- 
 }
 
 nav {
@@ -8,85 +7,15 @@ nav {
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background-color:rgba(255, 255, 255, 0.183);
-
-
+  background-color: rgba(255, 255, 255, 0.183);
 }
 
-.nav-links{
+.nav-links {
   width: 50%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  list-style:none;
+  list-style: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
-
-
-/* #email{
-  border: .5px solid;
-  width: 250px;
-  height: 45px;
-  border-radius: 5px;
-  text-align: center;
-  background-color: rgba(216, 216, 216, 0.548);
-}
-#name {
-  border: .5px solid;
-  width: 250px;
-  height: 45px;
-  border-radius: 5px;
-  text-align: center;
-  background-color: rgba(216, 216, 216, 0.548);
-}
-#user{
-  border: .5px solid;
-  width: 250px;
-  height: 45px;
-  border-radius: 5px;
-  text-align: center;
-  background-color: rgba(216, 216, 216, 0.548);
-}
-#pass {
-  border: .5px solid;
-  width: 250px;
-  height: 45px;
-  border-radius: 5px;
-  text-align: center;
-  background-color: rgba(216, 216, 216, 0.548);
-}
-#sign{
-  border: .5px;
-  width: 250px;
-  height: 45px;
-  border-radius: 5px;
-  background-color: rgb(60, 161, 255);
-  color: white;
-  width: 260px;
-}
-#form{
-  border: 2px solid black;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
-}
-h1 {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-#intro {
-  text-align: center;
-  border: 2px solid rgb(60, 161, 255);
-  border-radius: 5px;
-  max-width: 300px;
-  background-color: rgba(216, 216, 216, 0.548);
-  padding: 5px;
-  margin-left: auto;
-  margin-right: auto;
-}
-#terms{
-  text-align: center;
-  max-width: 400px;
-}
-#login{
-  border: 2px solid black;
-  border-radius: 10px;
-} */
