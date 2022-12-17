@@ -3,7 +3,11 @@ import { useState, useEffect } from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
 
+import { Navigate } from "react-router-dom";
+import { SignUpButton } from "./SignUpButton";
+
 export const Register = () => {
+  
   const [users, setUsers] = useState([]);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -48,12 +52,18 @@ export const Register = () => {
     setUsers([...users, newUsers]);
   };
 
-  // const submit = (e) => {
-  //   console.log(
-  //     `Email: ${email}, Name: ${name}, username: ${user}, Password: ${pass}`
-  //   );
-  //   e.preventDefault();
-  // };
+  // do i need to use db.json naming conventions in check user function?
+
+  // const CheckUser = (e) =>{" "}
+  // const navigate = navigate();
+  //     {users.forEach((users) => {
+  //       if (users.userName === userName && user.password === password) {
+  //         navigate("/FeedPage");
+  //       }
+
+  //       e.preventDefault();
+  //     })}
+
   return (
     <>
       <Nav></Nav>
@@ -107,12 +117,13 @@ export const Register = () => {
                 <br />
                 <br />
               </div>
+
               <div className="signup-div">
                 <button type="submit" id="sign">
                   Sign Up
                 </button>
               </div>
-
+              {/* <SignUpButton></SignUpButton> */}
               <br />
               <p id="terms">
                 By signing this you agree to our{" "}
@@ -123,12 +134,10 @@ export const Register = () => {
           </div>
         </div>
         <br />
-
-        <div id="login">
-          <p>
-            Have an account? <a href="http://localhost:3000/Login">Log in</a>
-          </p>
-        </div>
+        <p id="DHAA">Already Have An Account?</p>
+        <a id="sign-up-link" href="http://localhost:3000/Login">
+          Log In
+        </a>
       </div>
       <Footer></Footer>
     </>
