@@ -9,7 +9,7 @@ import Home from "./components/Home"
 import SignUp from "./components/SignUp";
 import Nav from "./components/Nav";
 import Login from "./components/Login";
-
+import FeedPage from "./components/FeedPage";
 function App() {
   return (
     <div className="App">
@@ -19,7 +19,7 @@ function App() {
         <Routes>
          
           <Route exact path = "/" element={<Home/>}/>
-        
+        <Route exact path = "/FeedPage" element={<FeedPage/>}/>
           <Route exact path="/SignUp" element={<SignUp />} />
           <Route exact path="/Login" element={<Login />} />
         </Routes>
