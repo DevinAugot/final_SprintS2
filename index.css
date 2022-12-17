@@ -273,13 +273,14 @@ h1 {
 
 }
 #login {
+  justify-content: center;
   color: blue;
   cursor: pointer;
   border: 2px solid black;
   border-radius: 10px;
   width: auto;
   background-color:rgba(216, 216, 216, 0.548) ;
-
+width: 120px;
 }
 
 /* Home page styling */
