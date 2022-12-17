@@ -9,4 +9,4 @@
 }
 
 
-// This array will be filled from the login page currently and will from userName,password,id, in the login page
+// This array will be filled from the login page and sign up page currently and will from userName,password,id, in the login page and for sign up will fill db.json array with Full name, email, user name and password and new id number based on location in array
