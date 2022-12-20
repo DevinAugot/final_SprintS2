@@ -1,13 +1,15 @@
 // Name: FeedPage (Final Sprint S2)
 // Authors: Devin Augot, Luke Jones & Jacob Thomas
 // Date Submitted: December 20th, 2022
-import { useState, useEffect } from "react";
 import Header from "./Header";
+import { useState, useEffect } from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
-const Login = () => {
+export const Register = () => {
   const [users, setUsers] = useState([]);
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [userName, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -23,20 +25,8 @@ const Login = () => {
     const data = await res.json();
     return data;
   };
-  const validateUser = (userName, password, info) => {
-    var match = false;
-    info.forEach((x) => {
-      switch (true) {
-        case x.userName === userName && x.password == password:
-          match = true;
-          break;
-      }
-      return match;
-    });
-    return match;
-  };
   const addUser = async (user) => {
-    const res = await fetch("http://localhost:5000/CurrentLogin", {
+    const res = await fetch("http://localhost:5000/users", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -47,64 +37,83 @@ const Login = () => {
     setUsers([...users, newUsers]);
   };
   return (
-    <div>
+    <>
       <Nav></Nav>
-      <div className="container">
-        <Header />
-        <div className="container w-25 p-3 background mt-5">
-          <form
-            className="form-control"
-            onSubmit={() =>
-              validateUser(userName, password, users)
-                ? addUser({ userName, password }) && navigate("/FeedPage")
-                : alert("Invalid user name or password")
-            }
-          >
-            {" "}
-            <p id="intro">
-              Hurry up and Log In Weve been waiting for you to come back!
-            </p>
-            <div className="row my-3">
-              <div className="col-9">
-                <div id="Username1">
-                  <input
-                    className="input-one"
-                    type="text"
-                    placeholder="Username"
-                    id="username"
-                    onChange={(e) => {
-                      setUsername(e.target.value);
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-9">
+      <div id="main">
+        <div className="signup-header">
+          <Header />
+        </div>
+        <div className="container-signup">
+          <div>
+            <form
+              onSubmit={() =>
+                addUser({ email, name, userName, password }) &&
+                navigate("/Login")
+              }
+              id="form-control"
+            >
+              <p id="intro">
+                Sign up to see code/projects/photos from friends & other people
+                around the world! Even get help debugging your code!
+              </p>
+              <div className="Input_container">
                 <input
-                  className="input-two"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  type="email"
+                  placeholder="Email"
+                  id="email"
+                />{" "}
+                <br />
+                <br />
+                <input
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  type="text"
+                  placeholder="Full Name"
+                  id="name"
+                />{" "}
+                <br />
+                <br />
+                <input
+                  onChange={(e) => setUsername(e.target.value)}
+                  type="text"
+                  placeholder="User Name"
+                  id="user"
+                />{" "}
+                <br />
+                <br />
+                <input
+                  onChange={(e) => setPassword(e.target.value)}
                   type="password"
                   placeholder="Password"
-                  id="password"
-                  onChange={(e) => {
-                    setPassword(e.target.value);
-                  }}
-                />
+                  id="pass"
+                />{" "}
+                <br />
+                <br />
               </div>
-            </div>
-            <button type="submit" id="btn-login">
-              Log In
-            </button>
-            <br />
-            <p id="DHAA">Don't have an account?</p>
-            <a id="sign-up-link" href="http://localhost:3000/SignUp">
-              Sign Up
-            </a>
-          </form>
+              <div className="signup-div">
+                <button type="submit" id="sign">
+                  Sign Up
+                </button>
+              </div>
+              <br />
+              <p id="terms">
+                By signing this you agree to our{" "}
+                <strong>Terms Privacy Policy</strong> and{" "}
+                <strong>Cookie Policy</strong>
+              </p>
+            </form>
+          </div>
         </div>
+        <br />
+        <p id="DHAA">Already Have An Account?</p>
+        <a id="sign-up-link" href="http://localhost:3000/Login">
+          Log In
+        </a>
       </div>
       <Footer></Footer>
-    </div>
+    </>
   );
 };
-export default Login;
+export default Register;
