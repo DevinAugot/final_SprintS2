@@ -1,5 +1,5 @@
-/* Author: Devin Augot */
-/* Date: December, ,2022 */
+/* Author: Devin Augot, luke jones, jacob thomas */
+/* Date: December,21 ,2022 */
 
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -11,6 +11,7 @@ import Nav from "./components/Nav";
 import Login from "./components/Login";
 import FeedPage from "./components/FeedPage";
 function App() {
+ 
   return (
     <div className="App">
       <Router>
