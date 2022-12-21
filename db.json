@@ -35,23 +35,10 @@
       "img": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
       "logo": "./images/finalLogo.png",
       "id": 2
-    },
-    {
-      "user": [
-        "Devin123"
-      ],
-      "img": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
-      "description": "I suck at programming",
-      "tag": "",
-      "id": 3
     }
   ],
   "CurrentLogin": [
-    {
-      "userName": "Devin123",
-      "password": "123abc",
-      "id": 1
-    }
+   
   ],
   "users": [
     {
@@ -70,6 +57,3 @@
     }
   ]
 }
-
-
-// This array will be filled from the login page and sign up page currently and will from userName,password,id, in the login page and for sign up will fill db.json array with Full name, email, user name and password and new id number based on location in array
