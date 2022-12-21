@@ -1,6 +1,6 @@
 // Name: FeedPage (Final Sprint S2)
 // Authors: Devin Augot, Luke Jones & Jacob Thomas
-// Date Submitted: December 20th, 2022
+// Date Submitted: December 21, 2022
 import React from "react";
 import { useState, useEffect } from "react";
 import LikeButton from "../components/LikeButton";
@@ -76,6 +76,7 @@ const FeedPage = () => {
       </div>
       
       <br />
+      
       <div className="container-feed">
         <div className="feed-header">
         <Header />
@@ -120,10 +121,12 @@ const FeedPage = () => {
         </form>
         </div>
       </div>
-      <div className="feed">
+      
+        <div className="feed">
         {posts.map((data) => {
           return (
             <>
+            
             <div className="post-div">
               <div className="post">
                 <img
@@ -157,10 +160,14 @@ const FeedPage = () => {
                 <br />
               </div>
               </div>
+             
             </>
           );
         })}
+        
       </div>
+      
+      
     
     </>
   );
