@@ -1,69 +1,41 @@
+// Name: Sign Up Page (Final Sprint S2)
+// Authors: Devin Augot, Luke Jones & Jacob Thomas
+// Date Submitted: December 21, 2022
 import Header from "./Header";
 import { useState, useEffect } from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
-
-import { Navigate } from "react-router-dom";
-import { SignUpButton } from "./SignUpButton";
-
+import { useNavigate } from "react-router-dom";
 export const Register = () => {
-  
   const [users, setUsers] = useState([]);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [userName, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchUsers = async () => {
       const dataFromServer = await fetchData();
-      // console.log(dataFromServer);
       setUsers(dataFromServer);
     };
-
     fetchUsers();
   }, []);
-
   const fetchData = async () => {
     const res = await fetch("http://localhost:5000/users");
-
     const data = await res.json();
-
-    console.log(data, res);
-
     return data;
   };
-
   const addUser = async (user) => {
     const res = await fetch("http://localhost:5000/users", {
       method: "POST",
-
       headers: {
         "Content-type": "application/json",
       },
-
       body: JSON.stringify(user),
     });
-    console.log(user);
     const newUsers = await res.json();
-
-    // console.log(newUsers);
-
     setUsers([...users, newUsers]);
   };
-
-  // do i need to use db.json naming conventions in check user function?
-
-  // const CheckUser = (e) =>{" "}
-  // const navigate = navigate();
-  //     {users.forEach((users) => {
-  //       if (users.userName === userName && user.password === password) {
-  //         navigate("/FeedPage");
-  //       }
-
-  //       e.preventDefault();
-  //     })}
-
   return (
     <>
       <Nav></Nav>
@@ -74,7 +46,10 @@ export const Register = () => {
         <div className="container-signup">
           <div>
             <form
-              onSubmit={() => addUser({ email, name, userName, password })}
+              onSubmit={() =>
+                addUser({ email, name, userName, password }) &&
+                navigate("/Login")
+              }
               id="form-control"
             >
               <p id="intro">
@@ -117,13 +92,11 @@ export const Register = () => {
                 <br />
                 <br />
               </div>
-
               <div className="signup-div">
                 <button type="submit" id="sign">
                   Sign Up
                 </button>
               </div>
-              {/* <SignUpButton></SignUpButton> */}
               <br />
               <p id="terms">
                 By signing this you agree to our{" "}
